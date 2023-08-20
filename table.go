@@ -124,6 +124,7 @@ type Table interface {
 	WithPadding(p int) Table
 	WithWriter(w io.Writer) Table
 	WithWidthFunc(f WidthFunc) Table
+	WithPrintHeaders(b bool) Table
 
 	AddRow(vals ...interface{}) Table
 	SetRows(rows [][]string) Table
