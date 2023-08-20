@@ -226,11 +226,14 @@ func (t *table) SetRows(rows [][]string) Table {
 	return t
 }
 
-func (t *table) Print() {
+func (t *table) Print(printHeader bool = true) {
 	format := strings.Repeat("%s", len(t.header)) + "\n"
 	t.calculateWidths()
 
-	t.printHeader(format)
+	if printHeader {
+		t.printHeader(format)
+	}
+
 	for _, row := range t.rows {
 		t.printRow(format, row)
 	}
