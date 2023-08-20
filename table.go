@@ -197,10 +197,10 @@ func (t *table) WithWidthFunc(f WidthFunc) Table {
 	return t
 }
 
-func (t *table) WithPrintHeaders(b bool) Table (
+func (t *table) WithPrintHeaders(b bool) Table {
 	t.PrintHeaders = b
 	return t
-)
+}
 
 func (t *table) AddRow(vals ...interface{}) Table {
 	maxNumNewlines := 0
